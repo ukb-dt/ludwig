@@ -98,7 +98,7 @@ $$
 \operatorname{Cov}_\tau(E,V)=\mathbb{E}\!\left[(E_t-\bar E)\,(V_{t+\tau}-\bar V)\right],
 $$
 
-and scan $\tau=0,1,2,\dots$ quarters to find where the relationship is strongest. A peak at \(\tau=2\)Q, for instance, would say “capacity turns into value about half a year later.”
+and scan $\tau=0,1,2,\dots$ quarters to find where the relationship is strongest. A peak at $\tau=2$Q, for instance, would say “capacity turns into value about half a year later.”
 
 3. Normalize if you want a unitless readout:
 
