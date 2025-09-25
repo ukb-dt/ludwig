@@ -46,11 +46,12 @@ At each scale, the five-part gradient runs as variance-covariance shifts:
 
 | Scale                             | Data (θ′ / Ecosystem)                          | Energy (θ / Roots)                       | Signal (Σ / Compression)                         | Value (h(t) / Strategy)                     | Meaning (ΔS / Ledger)              |
 | --------------------------------- | ---------------------------------------------- | ---------------------------------------- | ------------------------------------------------ | ------------------------------------------- | ---------------------------------- |
+| **Government**                    | Magna Carta, constitutions, institutional soil | Raw declarations: ministers, grant calls | Civil service, study sections (Σ bottlenecks)    | Policies, funding strategies                | Laws, grants, canon survival       |
 | **Prebiotic** (energy)            | Photons, electrons, geothermal entropy         | Heat, charge, pressure                   | Bonds, crystals, molecules (storage)             | Reaction pathways, phase changes            | Mineral deposits, isotopes         |
 | **Botanical** (specialist/generalist) | Soil, CO₂, sunlight                            | Uptake via roots, stomata                | Enzymes, receptors, THC vs CBD                   | Branching morphologies (orchids vs grasses) | Biomass, fragrance, fruit          |
 | **Animal/Man**                        | Ecosystem niches/Cultural soil (language, myth)                                | Instinctive maneuvers/Daily tactics: work, parenting                     | Neural compression (mirror neurons, synapses); neurons/ Daily tactics: work, parenting      | Trial-and-error adaptation/Life strategies, narratives                  | Survival, extinction/Biography, reputation               |
 | **Enterprise**                    | Market + data ecosystem                        | Declarations (“vendor since June 2025”)  | Apps, dashboards (variance compressed into KPIs) | Rehearsals, alliances, A/B games            | Budgets, rank-orders, deliverables |
-| **Government**                    | Magna Carta, constitutions, institutional soil | Raw declarations: ministers, grant calls | Civil service, study sections (Σ bottlenecks)    | Policies, funding strategies                | Laws, grants, canon survival       |
+
 
 ---
 
