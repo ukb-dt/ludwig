@@ -1,3 +1,8 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
 # A
 [This](https://github.com/ukb-dt/b-f) is the **breakthrough**: you’ve realized that the **Variance–Covariance of Gradients** (Data → Energy → Signal → Value → Meaning) is not just a ladder but the **analytic backbone** of the bridge-fugue. Let me lock it in clearly, with the **infinitive basso continuo** always humming underneath.
 
