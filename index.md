@@ -163,15 +163,15 @@ The variance-covariance matrix Σ at each scale is a 5x5 symmetric matrix:
 
 For the NVIDIA x OpenAI 2025 partnership, this maps concretely:  
 - **Energy (θ)**: Literal power intake (10 GW data centers, millions of GPUs drawing ~2.5-3 kW each, per partnership specs). This scales AI training/inference, but with high variance from grid constraints and blackouts.  
-- **Value (h(t))**: Strategic outputs like AGI rehearsals, A/B model testing, and deliverables (e.g., OpenAI's \$13B projected 2025 revenue, boosted by NVIDIA's \$100B investment). Covariance here is positive and strong: More energy mobilization correlates with higher-value AI strategies, but with risks like over-reliance on proprietary CUDA locking in costs.  
+- **Value (h(t))**: Strategic outputs like AGI rehearsals, A/B model testing, and deliverables (e.g., OpenAI's /$13B projected 2025 revenue, boosted by NVIDIA's /$100B investment). Covariance here is positive and strong: More energy mobilization correlates with higher-value AI strategies, but with risks like over-reliance on proprietary CUDA locking in costs.  
 - Overall covariance: In this "Enterprise" scale, Cov(Energy, Value) ≈ +0.8 (heuristic; energy surges enable value branching, but variance from supply bottlenecks like TSMC could introduce noise). The partnership exemplifies the bridge: Diagonal compression (NVIDIA's chips as Σ) links market entropy (Data) to policy-ledgers (Meaning, e.g., antitrust scrutiny).  
 
-Now, the multi-scale canon as matrices. I'll denote Σ_scale as sparse for efficiency (strong diagonals, decaying off-diagonals to reflect compression).
+Now, the multi-scale canon as matrices. I'll denote $Σ_{scale}$ as sparse for efficiency (strong diagonals, decaying off-diagonals to reflect compression).
 
 #### Pre-Plant Scale (Energy Baseline)
 Focus: Photons → Minerals. High entropy variance, covalent bonds as covariance.  
 
-$Σ_Pre-Plant$ =  
+$Σ_{Pre-Plant}$ =  
 
 |          | Data (Photons) | Energy (Heat) | Signal (Bonds) | Value (Pathways) | Meaning (Deposits) |  
 |----------|----------------|---------------|----------------|------------------|--------------------|  
@@ -183,7 +183,7 @@ $Σ_Pre-Plant$ =
 
 #### Plant Scale (Specialist/Generalist)
 Ledger from Pre-Plant (minerals) as new Data. Covariance via receptors (e.g., THC/CBD as signal compression).  
-Σ_Plant = Similar structure, but variances tuned: Var(Data) inherits Pre-Plant ΔS (low → med via soil entropy). Cov(Energy, Value) = + (uptake → branching morphologies).  
+$Σ_{Plant}$ = Similar structure, but variances tuned: Var(Data) inherits Pre-Plant ΔS (low → med via soil entropy). Cov(Energy, Value) = + (uptake → branching morphologies).  
 
 #### Animal Scale
 Niches → Survival. Mirror neurons compress variance; Cov(Energy, Value) = +high (instincts → adaptations).  
@@ -194,7 +194,7 @@ Myths → Biography. Habits as Σ; Cov(Energy, Value) = + (tactics → narrative
 #### Enterprise Scale (NVIDIA x OpenAI Lens)
 Markets → Deliverables. Apps/KPIs as compression; the 2025 partnership spikes Cov(Energy, Value): $100B investment mobilizes energy (10 GW) for value (AI alliances, rehearsals). Var(Energy) high from power demands; Cov with Signal (dashboards) diagonalizes risks.  
 
-$Σ_Enterprise$ =  
+$Σ_{Enterprise}$ =  
 
 |          | Data (Markets) | Energy (Declarations) | Signal (Apps) | Value (Alliances) | Meaning (Budgets) |  
 |----------|----------------|-----------------------|---------------|-------------------|-------------------|  
@@ -212,7 +212,34 @@ The fugue: Stack these as a block matrix, where off-block covariances link scale
 ### Numerical Proxy (via Code)
 To make it tangible, let's simulate a 5-variable covariance matrix with synthetic data reflecting the cascade: High initial variance, positive covariances decaying downstream. Assume normal distributions; compute Σ.
 
-For a closed-ended math demo: Generate 1000 samples where X₁ ~ N(0,10) (high var Data), X₂ = 0.8*X₁ + N(0,5) (Energy covaries), X₃ = 0.9*X₂ + N(0,2) (Signal compresses), etc. Then cov matrix = (1/n) * (X - mean(X))^T (X - mean(X)).
+**Sample generation (n = 1000):**
+
+$$
+\begin{aligned}
+X_1^{(i)} &\sim \mathcal{N}(0,\,10),\\
+X_2^{(i)} &= 0.8\,X_1^{(i)} + \varepsilon_2^{(i)}, \qquad \varepsilon_2^{(i)} \sim \mathcal{N}(0,\,5),\\
+X_3^{(i)} &= 0.9\,X_2^{(i)} + \varepsilon_3^{(i)}, \qquad \varepsilon_3^{(i)} \sim \mathcal{N}(0,\,2),
+\end{aligned}
+\qquad i=1,\dots,1000.
+$$
+
+**Stack into vectors:**
+
+$$
+\mathbf{x}^{(i)}=\begin{bmatrix}X_1^{(i)}\\X_2^{(i)}\\X_3^{(i)}\end{bmatrix}\in\mathbb{R}^3,
+\qquad
+\bar{\mathbf{x}}=\frac{1}{n}\sum_{i=1}^{n}\mathbf{x}^{(i)}.
+$$
+
+**Sample covariance matrix (1/n normalization):**
+
+$$
+\widehat{\Sigma}
+=\frac{1}{n}\sum_{i=1}^{n}\bigl(\mathbf{x}^{(i)}-\bar{\mathbf{x}}\bigr)\bigl(\mathbf{x}^{(i)}-\bar{\mathbf{x}}\bigr)^{\!\top}.
+$$
+
+*(For the unbiased estimator, replace $1/n$ with $1/(n-1)$.)*
+
 
 Resulting sample Σ (rounded):  
 
