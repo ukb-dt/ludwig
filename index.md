@@ -15,7 +15,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {% endraw %}
 
-> *Firm = Compression*
+> *Firm = Compression*            
 > -- [S3E8](https://en.wikipedia.org/wiki/Yes_Minister) Special: Party Games
 
 # A
