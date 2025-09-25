@@ -197,11 +197,17 @@ To make it tangible, let's simulate a 5-variable covariance matrix with syntheti
 For a closed-ended math demo: Generate 1000 samples where X₁ ~ N(0,10) (high var Data), X₂ = 0.8*X₁ + N(0,5) (Energy covaries), X₃ = 0.9*X₂ + N(0,2) (Signal compresses), etc. Then cov matrix = (1/n) * (X - mean(X))^T (X - mean(X)).
 
 Resulting sample Σ (rounded):  
-[[10.12,  8.05,  7.21,  6.45,  5.78],  
- [ 8.05,  9.12,  8.17,  7.31,  6.55],  
- [ 7.21,  8.17,  7.42,  6.55,  5.87],  
- [ 6.45,  7.31,  6.55,  6.02,  5.24],  
- [ 5.78,  6.55,  5.87,  5.24,  4.85]]  
+
+$$
+\begin{bmatrix}
+10.12 &  8.05 &  7.21 &  6.45 &  5.78 \\
+ 8.05 &  9.12 &  8.17 &  7.31 &  6.55 \\
+ 7.21 &  8.17 &  7.42 &  6.55 &  5.87 \\
+ 6.45 &  7.31 &  6.55 &  6.02 &  5.24 \\
+ 5.78 &  6.55 &  5.87 &  5.24 &  4.85
+\end{bmatrix}
+$$
+
 
 Key: Cov(Energy=Row2, Value=Col4) = 7.31 (positive, strong). This repeats fractally—scale it up for photons to policy.
 
