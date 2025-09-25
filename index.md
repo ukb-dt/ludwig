@@ -148,7 +148,7 @@ Now, the multi-scale canon as matrices. I'll denote \(\Sigma_{\text{scale}}\) as
 #### Pre-Plant Scale (Energy Baseline)
 Focus: Photons → Minerals. High entropy variance, covalent bonds as covariance.  
 
-\(\Sigma_{\text{Pre-Plant}}\) =  
+$\Sigma_{\text{Pre-Plant}}$ =  
 
 |          | Data (Photons) | Energy (Heat) | Signal (Bonds) | Value (Pathways) | Meaning (Deposits) |  
 |----------|----------------|---------------|----------------|------------------|--------------------|  
@@ -171,7 +171,7 @@ Myths → Biography. Habits as Σ; Cov(Energy, Value) = + (tactics → narrative
 #### Enterprise Scale (NVIDIA x OpenAI Lens)
 Markets → Deliverables. Apps/KPIs as compression; the 2025 partnership spikes Cov(Energy, Value): \(\$100B\) investment mobilizes energy (10 GW) for value (AI alliances, rehearsals). Var(Energy) high from power demands; Cov with Signal (dashboards) diagonalizes risks.  
 
-\(\Sigma_{\text{Enterprise}}\) =  
+$\Sigma_{\text{Enterprise}}$ =  
 
 |          | Data (Markets) | Energy (Declarations) | Signal (Apps) | Value (Alliances) | Meaning (Budgets) |  
 |----------|----------------|-----------------------|---------------|-------------------|-------------------|  
@@ -208,7 +208,7 @@ $$
 \bar{\mathbf{x}}=\frac{1}{n}\sum_{i=1}^{n}\mathbf{x}^{(i)}.
 $$
 
-**Sample covariance matrix (1/n normalization):**
+**Sample covariance matrix ($]frac{1}{n}$ normalization):**
 
 $$
 \widehat{\Sigma}
