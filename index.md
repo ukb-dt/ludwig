@@ -97,11 +97,11 @@ $$
 \beta_{V\!\sim\!E}=\frac{\operatorname{Cov}(E,V)}{\operatorname{Var}(E)}.
 $$
 
-That $\beta$ is “$ value per additional GW (or per additional MWh).”
+That $\beta$ is “\$ value per additional GW (or per additional MWh).”
 
 # What to plug in (ground truth you can harvest now)
 
-* **Partnership scale:** OpenAI and NVIDIA announced a **10-GW** NVIDIA-systems buildout (millions of GPUs) with NVIDIA intending to invest **up to $100B** alongside the roll-out, first ~1 GW slated for **H2 2026**. That gives you the $E_t$ trajectory (planned → energized) and the staging to choose lags. ([OpenAI][1])
+* **Partnership scale:** OpenAI and NVIDIA announced a **10-GW** NVIDIA-systems buildout (millions of GPUs) with NVIDIA intending to invest **up to \$100B** alongside the roll-out, first ~1 GW slated for **H2 2026**. That gives you the $E_t$ trajectory (planned → energized) and the staging to choose lags. ([OpenAI][1])
 
 * **Ecosystem signals you can align with $V_t$:** multi-billion-dollar OpenAI infrastructure contracts (e.g., CoreWeave deals) and datacenter site announcements with Oracle/SoftBank under the “Stargate” umbrella, which collectively point to revenue capacity being monetized; these are useful to timestamp value recognition and bookings. ([Reuters][2])
 
@@ -145,7 +145,7 @@ The variance-covariance matrix Σ at each scale is a 5x5 symmetric matrix:
 
 For the NVIDIA x OpenAI 2025 partnership, this maps concretely:  
 - **Energy (θ)**: Literal power intake (10 GW data centers, millions of GPUs drawing ~2.5-3 kW each, per partnership specs). This scales AI training/inference, but with high variance from grid constraints and blackouts.  
-- **Value (h(t))**: Strategic outputs like AGI rehearsals, A/B model testing, and deliverables (e.g., OpenAI's $13B projected 2025 revenue, boosted by NVIDIA's $100B investment). Covariance here is positive and strong: More energy mobilization correlates with higher-value AI strategies, but with risks like over-reliance on proprietary CUDA locking in costs.  
+- **Value (h(t))**: Strategic outputs like AGI rehearsals, A/B model testing, and deliverables (e.g., OpenAI's \$13B projected 2025 revenue, boosted by NVIDIA's \$100B investment). Covariance here is positive and strong: More energy mobilization correlates with higher-value AI strategies, but with risks like over-reliance on proprietary CUDA locking in costs.  
 - Overall covariance: In this "Enterprise" scale, Cov(Energy, Value) ≈ +0.8 (heuristic; energy surges enable value branching, but variance from supply bottlenecks like TSMC could introduce noise). The partnership exemplifies the bridge: Diagonal compression (NVIDIA's chips as Σ) links market entropy (Data) to policy-ledgers (Meaning, e.g., antitrust scrutiny).  
 
 Now, the multi-scale canon as matrices. I'll denote Σ_scale as sparse for efficiency (strong diagonals, decaying off-diagonals to reflect compression).
