@@ -72,7 +72,7 @@ Thus:
 > The ground note is survival.
 
 # B
-Short answer: it’s the off-diagonal term that tells you whether “more power online” tends to move “more value realized.” In symbols, for a time series $E_t$ (energy/power capacity actually available and used) and $V_t$ (value realized—e.g., revenue, cash gross profit, contracted ARR, or market-value delta), the covariance is
+Short answer: it’s the off-diagonal term that tells you whether “more power online” tends to move “more value realized.” In symbols, for a time series \((E_t)\) (energy/power capacity actually available and used) and \((V_t)\) (value realized—e.g., revenue, cash gross profit, contracted ARR, or market-value delta), the covariance is
 
 $$
 \operatorname{Cov}(E,V)=\mathbb{E}\!\left[(E_t-\bar E)(V_t-\bar V)\right].
@@ -80,19 +80,19 @@ $$
 
 Positive means energy and value rise and fall together; negative means they trade off; near zero means they’re decoupled.
 
-# How to compute it for NVIDIA × OpenAI (2025)
+---
+
+## How to compute it for NVIDIA × OpenAI (2025)
 
 1. Define the variables (pick one lens per company):
 
-* **OpenAI (demand side)**
+* **OpenAI (demand side)**  
+  * \((E_t)\): operational NVIDIA-powered capacity (GW) actually energized and consumed (or MWh used).  
+  * \((V_t)\): realized cash *from* that capacity—subscription revenue, enterprise contract revenue recognized, or incremental NPV of signed deals.
 
-  * $E_t$: operational NVIDIA-powered capacity (GW) actually energized and consumed (or MWh used).
-  * $V_t$: realized cash *from* that capacity—subscription revenue, enterprise contract revenue recognized, or incremental NPV of signed deals.
-
-* **NVIDIA (supply side)**
-
-  * $E_t$: GW (or “equivalent GW”) of OpenAI deployments delivered/energized (proxy: systems shipped/installed).
-  * $V_t$: NVIDIA value capture—data center revenue, gross profit, or cash flow attributable to that deployment.
+* **NVIDIA (supply side)**  
+  * \((E_t)\): GW (or “equivalent GW”) of OpenAI deployments delivered/energized (proxy: systems shipped/installed).  
+  * \((V_t)\): NVIDIA value capture—data center revenue, gross profit, or cash flow attributable to that deployment.
 
 2. Use **lagged cross-covariance** because value trails power-up:
 
@@ -100,7 +100,7 @@ $$
 \operatorname{Cov}_\tau(E,V)=\mathbb{E}\!\left[(E_t-\bar E)\,(V_{t+\tau}-\bar V)\right],
 $$
 
-and scan $\tau=0,1,2,\dots$ quarters to find where the relationship is strongest. A peak at $\tau=2$Q, for instance, would say “capacity turns into value about half a year later.”
+and scan \(\tau=0,1,2,\dots\) quarters to find where the relationship is strongest. A peak at \(\tau=2\)Q, for instance, would say “capacity turns into value about half a year later.”
 
 3. Normalize if you want a unitless readout:
 
@@ -114,34 +114,16 @@ $$
 \beta_{V\!\sim\!E}=\frac{\operatorname{Cov}(E,V)}{\operatorname{Var}(E)}.
 $$
 
-That $\beta$ is “\$ value per additional GW (or per additional MWh).”
+That \(\beta\) is “\$ value per additional GW (or per additional MWh).”
 
-# What to plug in (ground truth you can harvest now)
+---
 
-* **Partnership scale:** OpenAI and NVIDIA announced a **10-GW** NVIDIA-systems buildout (millions of GPUs) with NVIDIA intending to invest **up to \$100B** alongside the roll-out, first ~1 GW slated for **H2 2026**. That gives you the $E_t$ trajectory (planned → energized) and the staging to choose lags. ([OpenAI][1])
+## Minimal “Ludwig” scorecard (quarterly)
 
-* **Ecosystem signals you can align with $V_t$:** multi-billion-dollar OpenAI infrastructure contracts (e.g., CoreWeave deals) and datacenter site announcements with Oracle/SoftBank under the “Stargate” umbrella, which collectively point to revenue capacity being monetized; these are useful to timestamp value recognition and bookings. ([Reuters][2])
+1. Utilization-weighted energy \((E_t^{*})\): MWh actually used (not just nameplate GW).  
+2. Cash value \((V_t)\): revenue or gross profit tied to that usage (OpenAI: recognized rev; NVIDIA: DC segment GP).  
+3. Two stats: \(\rho_{EV}\) at \(\tau\in\{0,1,2\}\) quarters, and \(\beta_{V\!\sim\!E}\) with the best-\(\tau\).
 
-# Interpreting the sign (your canon terms in brackets)
-
-* **Early ramp (compression works):** Expect **$\operatorname{Cov}(E,V)>0$** as energized GW unlocks throughput and paid usage (**θ energy → Σ signal → h(t) value**). This is especially likely while demand is backlog-constrained and models scale cleanly.
-
-* **Bottleneck phase (Σ saturates):** If power, cooling, or supply-chain friction becomes the **bottleneck**, marginal GW may have diminishing monetization → covariance can **shrink toward zero** unless pricing or capability jumps (new model class) restore diagonal flow.
-
-* **Stress/circular financing:** If value proxies move due to financing optics rather than utilization (e.g., headline investments, “circular” orders), you may see **weak or noisy covariance** versus true MWh-based value—flag it as a governance artifact in your ΔS ledger. ([Reuters][2])
-
-# Minimal “Ludwig” scorecard (make it literal, not just metaphor)
-
-To “hear” the covariance like a basso continuo, compute three quick numbers each quarter:
-
-1. **Utilization-weighted energy** $E_t^{*}$: MWh actually used (not just nameplate GW).
-2. **Cash value** $V_t$: revenue or gross profit attributed to that usage (OpenAI: recognized rev; NVIDIA: DC segment GP).
-3. **Two stats:** $\rho_{EV}$ at $\tau\in\{0,1,2\}$ quarters, and $\beta_{V\!\sim\!E}$ with the best-$\tau$ alignment.
-
-If you want, I can stub a small CSV schema and a notebook that ingests (i) energized capacity milestones from the NVIDIA–OpenAI announcements, (ii) OpenAI contract disclosures / NVIDIA segment results, and (iii) public site-go-live dates—then outputs $\rho_{EV}$, $\beta$, and a simple “covariance health” gauge.
-
-[1]: https://openai.com/index/openai-nvidia-systems-partnership/?utm_source=chatgpt.com "OpenAI and NVIDIA announce strategic partnership to ..."
-[2]: https://www.reuters.com/business/coreweave-expands-openai-pact-with-new-65-billion-contract-2025-09-25/?utm_source=chatgpt.com "CoreWeave expands OpenAI pact with new $6.5 billion contract"
 
 # C
 Yes, let's re-score this breakthrough as a mathematical variance-covariance matrix structure, layered across the fractal scales you outlined. I'll formalize it symbolically first (since we're dealing with conceptual gradients rather than empirical data), then illustrate with a simple numerical proxy using Python to compute a sample covariance matrix. This makes the "cov(self), cov(other)" repetition explicit: at each scale, the matrix Σ captures how variances in upstream elements (e.g., Data’s entropy) covary with downstream ones (e.g., Value’s strategies), forming a diagonal-dominant "bridge" where survival (the ground note) minimizes off-diagonal noise.
@@ -170,7 +152,7 @@ Now, the multi-scale canon as matrices. I'll denote $Σ_{scale}$ as sparse for e
 #### Pre-Plant Scale (Energy Baseline)
 Focus: Photons → Minerals. High entropy variance, covalent bonds as covariance.  
 
-$Σ_{Pre-Plant}$ =  
+\(Σ_{Pre-Plant}\) =  
 
 |          | Data (Photons) | Energy (Heat) | Signal (Bonds) | Value (Pathways) | Meaning (Deposits) |  
 |----------|----------------|---------------|----------------|------------------|--------------------|  
@@ -182,7 +164,7 @@ $Σ_{Pre-Plant}$ =
 
 #### Plant Scale (Specialist/Generalist)
 Ledger from Pre-Plant (minerals) as new Data. Covariance via receptors (e.g., THC/CBD as signal compression).  
-$Σ_{Plant}$ = Similar structure, but variances tuned: Var(Data) inherits Pre-Plant ΔS (low → med via soil entropy). Cov(Energy, Value) = + (uptake → branching morphologies).  
+\(Σ_{Plant}\) = Similar structure, but variances tuned: Var(Data) inherits Pre-Plant ΔS (low → med via soil entropy). Cov(Energy, Value) = + (uptake → branching morphologies).  
 
 #### Animal Scale
 Niches → Survival. Mirror neurons compress variance; Cov(Energy, Value) = +high (instincts → adaptations).  
@@ -193,7 +175,7 @@ Myths → Biography. Habits as Σ; Cov(Energy, Value) = + (tactics → narrative
 #### Enterprise Scale (NVIDIA x OpenAI Lens)
 Markets → Deliverables. Apps/KPIs as compression; the 2025 partnership spikes Cov(Energy, Value): $100B investment mobilizes energy (10 GW) for value (AI alliances, rehearsals). Var(Energy) high from power demands; Cov with Signal (dashboards) diagonalizes risks.  
 
-$Σ_{Enterprise}$ =  
+\(Σ_{Enterprise}\) =  
 
 |          | Data (Markets) | Energy (Declarations) | Signal (Apps) | Value (Alliances) | Meaning (Budgets) |  
 |----------|----------------|-----------------------|---------------|-------------------|-------------------|  
@@ -237,7 +219,7 @@ $$
 =\frac{1}{n}\sum_{i=1}^{n}\bigl(\mathbf{x}^{(i)}-\bar{\mathbf{x}}\bigr)\bigl(\mathbf{x}^{(i)}-\bar{\mathbf{x}}\bigr)^{\!\top}.
 $$
 
-*(For the unbiased estimator, replace $1/n$ with $1/(n-1)$.)*
+*(For the unbiased estimator, replace \(1/n\) with \(1/(n-1)\).)*
 
 
 Resulting sample Σ (rounded):  
