@@ -68,7 +68,7 @@ Thus:
 > The ground note is survival.
 
 # B
-Short answer: it’s the off-diagonal term that tells you whether “more power online” tends to move “more value realized.” In symbols, for a time series \((E_t)\) (energy/power capacity actually available and used) and \((V_t)\) (value realized—e.g., revenue, cash gross profit, contracted ARR, or market-value delta), the covariance is
+Short answer: it’s the off-diagonal term that tells you whether “more power online” tends to move “more value realized.” In symbols, for a time series $(E_t)$ (energy/power capacity actually available and used) and $(V_t)$ (value realized—e.g., revenue, cash gross profit, contracted ARR, or market-value delta), the covariance is
 
 $$
 \operatorname{Cov}(E,V)=\mathbb{E}\!\left[(E_t-\bar E)(V_t-\bar V)\right].
@@ -83,12 +83,12 @@ Positive means energy and value rise and fall together; negative means they trad
 1. Define the variables (pick one lens per company):
 
 * **OpenAI (demand side)**  
-  * \((E_t)\): operational NVIDIA-powered capacity (GW) actually energized and consumed (or MWh used).  
-  * \((V_t)\): realized cash *from* that capacity—subscription revenue, enterprise contract revenue recognized, or incremental NPV of signed deals.
+  * $(E_t)$: operational NVIDIA-powered capacity (GW) actually energized and consumed (or MWh used).  
+  * $(V_t)$: realized cash *from* that capacity—subscription revenue, enterprise contract revenue recognized, or incremental NPV of signed deals.
 
 * **NVIDIA (supply side)**  
-  * \((E_t)\): GW (or “equivalent GW”) of OpenAI deployments delivered/energized (proxy: systems shipped/installed).  
-  * \((V_t)\): NVIDIA value capture—data center revenue, gross profit, or cash flow attributable to that deployment.
+  * $(E_t)$: GW (or “equivalent GW”) of OpenAI deployments delivered/energized (proxy: systems shipped/installed).  
+  * $(V_t)$: NVIDIA value capture—data center revenue, gross profit, or cash flow attributable to that deployment.
 
 2. Use **lagged cross-covariance** because value trails power-up:
 
@@ -96,7 +96,7 @@ $$
 \operatorname{Cov}_\tau(E,V)=\mathbb{E}\!\left[(E_t-\bar E)\,(V_{t+\tau}-\bar V)\right],
 $$
 
-and scan \(\tau=0,1,2,\dots\) quarters to find where the relationship is strongest. A peak at \(\tau=2\)Q, for instance, would say “capacity turns into value about half a year later.”
+and scan $\tau=0,1,2,\dots$ quarters to find where the relationship is strongest. A peak at \(\tau=2\)Q, for instance, would say “capacity turns into value about half a year later.”
 
 3. Normalize if you want a unitless readout:
 
@@ -110,15 +110,15 @@ $$
 \beta_{V\!\sim\!E}=\frac{\operatorname{Cov}(E,V)}{\operatorname{Var}(E)}.
 $$
 
-That \(\beta\) is “\$ value per additional GW (or per additional MWh).”
+That $\beta$ is “\$ value per additional GW (or per additional MWh).”
 
 ---
 
 ## Minimal “Ludwig” scorecard (quarterly)
 
-1. Utilization-weighted energy \((E_t^{*})\): MWh actually used (not just nameplate GW).  
-2. Cash value \((V_t)\): revenue or gross profit tied to that usage (OpenAI: recognized rev; NVIDIA: DC segment GP).  
-3. Two stats: \(\rho_{EV}\) at \(\tau\in\{0,1,2\}\) quarters, and \(\beta_{V\!\sim\!E}\) with the best-\(\tau\).
+1. Utilization-weighted energy $(E_t^{*})$: MWh actually used (not just nameplate GW).  
+2. Cash value $(V_t)$: revenue or gross profit tied to that usage (OpenAI: recognized rev; NVIDIA: DC segment GP).  
+3. Two stats: $\rho_{EV}$ at $\tau\in\{0,1,2\}$ quarters, and $\beta_{V\!\sim\!E}$ with the best-$\tau$.
 
 
 # C
@@ -140,7 +140,7 @@ The variance-covariance matrix Σ at each scale is a 5x5 symmetric matrix:
 
 For the NVIDIA x OpenAI 2025 partnership, this maps concretely:  
 - **Energy (θ)**: Literal power intake (10 GW data centers, millions of GPUs drawing ~2.5-3 kW each, per partnership specs). This scales AI training/inference, but with high variance from grid constraints and blackouts.  
-- **Value (h(t))**: Strategic outputs like AGI rehearsals, A/B model testing, and deliverables (e.g., OpenAI's \(\$13B\) projected 2025 revenue, boosted by NVIDIA's \(\$100B\) investment). Covariance here is positive and strong: More energy mobilization correlates with higher-value AI strategies, but with risks like over-reliance on proprietary CUDA locking in costs.  
+- **Value (h(t))**: Strategic outputs like AGI rehearsals, A/B model testing, and deliverables (e.g., OpenAI's $\$13B$ projected 2025 revenue, boosted by NVIDIA's $\$100B$ investment). Covariance here is positive and strong: More energy mobilization correlates with higher-value AI strategies, but with risks like over-reliance on proprietary CUDA locking in costs.  
 - Overall covariance: In this "Enterprise" scale, Cov(Energy, Value) ≈ +0.8 (heuristic; energy surges enable value branching, but variance from supply bottlenecks like TSMC could introduce noise). The partnership exemplifies the bridge: Diagonal compression (NVIDIA's chips as Σ) links market entropy (Data) to policy-ledgers (Meaning, e.g., antitrust scrutiny).  
 
 Now, the multi-scale canon as matrices. I'll denote \(\Sigma_{\text{scale}}\) as sparse for efficiency (strong diagonals, decaying off-diagonals to reflect compression).
@@ -160,7 +160,7 @@ $\Sigma_{\text{Pre-Plant}}$ =
 
 #### Plant Scale (Specialist/Generalist)
 Ledger from Pre-Plant (minerals) as new Data. Covariance via receptors (e.g., THC/CBD as signal compression).  
-\(\Sigma_{\text{Plant}}\) = Similar structure, but variances tuned: Var(Data) inherits Pre-Plant ΔS (low → med via soil entropy). Cov(Energy, Value) = + (uptake → branching morphologies).  
+$\Sigma_{\text{Plant}}$ = Similar structure, but variances tuned: Var(Data) inherits Pre-Plant ΔS (low → med via soil entropy). Cov(Energy, Value) = + (uptake → branching morphologies).  
 
 #### Animal Scale
 Niches → Survival. Mirror neurons compress variance; Cov(Energy, Value) = +high (instincts → adaptations).  
@@ -208,7 +208,7 @@ $$
 \bar{\mathbf{x}}=\frac{1}{n}\sum_{i=1}^{n}\mathbf{x}^{(i)}.
 $$
 
-**Sample covariance matrix ($]frac{1}{n}$ normalization):**
+**Sample covariance matrix $\frac{1}{n}$ normalization):**
 
 $$
 \widehat{\Sigma}
