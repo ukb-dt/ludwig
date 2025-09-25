@@ -46,7 +46,7 @@ At each scale, the five-part gradient runs as variance-covariance shifts:
 
 ## **Fractal Table — Variance–Covariance Canon**
 
-| Scale                             | Data (θ′ / Ecosystem)                          | Energy (θ / Roots)                       | Signal (Σ / Compression)                         | Value (h(t) / Strategy)                     | Meaning (ΔS / Ledger)              |
+| Scale                             | Data (θ′ / Ecosystem / [3](https://ukb-dt.github.io/tree-clock-neuron/))                          | Energy (θ / Roots / 6)                       | Signal (Σ / Compression / 9)                         | Value (h(t) / Strategy / 12)                     | Meaning (ΔS / Ledger / Center)              |
 | --------------------------------- | ---------------------------------------------- | ---------------------------------------- | ------------------------------------------------ | ------------------------------------------- | ---------------------------------- |
 | **Government**                    | Magna Carta, constitutions, institutional soil | Raw declarations: ministers, grant calls | Civil service, study sections (Σ bottlenecks)    | Policies, funding strategies                | Laws, grants, canon survival       |
 | **Prebiotic** (energy)            | Photons, electrons, geothermal entropy         | Heat, charge, pressure                   | Bonds, crystals, molecules (storage)             | Reaction pathways, phase changes            | Mineral deposits, isotopes         |
