@@ -1,5 +1,4 @@
-almost everything is working perfectly. but edit for LaTeX following "For the NVIDIA x OpenAI 2025 partnership, this maps concretely:" 
-<script>
+ 
 window.MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
