@@ -215,9 +215,9 @@ $$
 =\frac{1}{n}\sum_{i=1}^{n}\bigl(\mathbf{x}^{(i)}-\bar{\mathbf{x}}\bigr)\bigl(\mathbf{x}^{(i)}-\bar{\mathbf{x}}\bigr)^{\!\top}.
 $$
 
-*(For the unbiased estimator, replace \(1/n\) with \(1/(n-1)\).)*
+*(For the unbiased estimator, replace $\frac{1}{n}$ with $\frac{1}{n-1}$.)*
 
-**Resulting sample \(\Sigma\) (rounded):**  
+**Resulting sample $\Sigma\$ (rounded):**  
 
 $$
 \begin{bmatrix}
