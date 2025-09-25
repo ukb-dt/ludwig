@@ -17,7 +17,7 @@ At each scale, the five-part gradient runs as variance-covariance shifts:
 
 1. **Data (θ′)** = entropy fields, unpruned possibilities.
 2. **Energy (θ)** = tactical intake, flows that can be mobilized.
-3. **Signal (Σ)** = compression into invariant channels.
+3. **Signal (Σ)** = compression into invariant channels (firm ritual demands).
 4. **Value (h(t))** = branching strategies tested in time.
 5. **Meaning (ΔS)** = posterior ledger, outcomes recorded.
 
